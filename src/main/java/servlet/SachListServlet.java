@@ -26,13 +26,9 @@ public class SachListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
         List<Sach> danhSachSach = sachRepository.findAll();
-
         request.setAttribute("sachList", danhSachSach);
-
         RequestDispatcher dispatcher = request.getRequestDispatcher("/views/sachs.jsp");
-
         dispatcher.forward(request, response);
     }
 

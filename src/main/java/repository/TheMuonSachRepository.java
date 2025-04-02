@@ -8,7 +8,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -87,16 +86,5 @@ public class TheMuonSachRepository {
             e.printStackTrace();
         }
         return results;
-    }
-
-    // Phương thức mới cho Yêu cầu 3 (dùng trong SP thay thế)
-    // Bạn có thể giữ lại hoặc xóa nếu chắc chắn không dùng ở đâu khác
-    public boolean markAsReturned(int maMuonSach, Connection conn) throws SQLException {
-        String sql = "UPDATE TheMuonSach SET TrangThai = FALSE WHERE MaMuonSach = ? AND TrangThai = TRUE";
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, maMuonSach);
-            int rowsAffected = pstmt.executeUpdate();
-            return rowsAffected == 1;
-        }
     }
 }

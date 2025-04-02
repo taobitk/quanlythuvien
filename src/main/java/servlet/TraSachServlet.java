@@ -1,9 +1,6 @@
 package servlet;
 
 import connect.DatabaseConnection;
-// import repository.SachRepository; // Không cần trực tiếp nếu SP làm hết
-// import repository.TheMuonSachRepository; // Không cần trực tiếp nếu SP làm hết
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,11 +14,6 @@ import java.sql.Types;
 
 @WebServlet("/tra-sach")
 public class TraSachServlet extends HttpServlet {
-
-    @Override
-    public void init() throws ServletException {
-        // Không cần khởi tạo repo nếu không dùng
-    }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
